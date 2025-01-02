@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = "stepDefinitions"
 )
 public class RunnerClass {
-
+// for git hub create a new repository to push the code
     // it should combine the features and step definitions
     // it should run the tests
 
