@@ -7,12 +7,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "featureFiles/LoginWithData.feature",
-        glue = "stepDefinitions"
+        features = "featureFiles",
+        glue = "stepDefinitions",
+        dryRun = true,
+        format = {"html:target/cucumber-reports", "json:target/cucumber.json"}
 )
 public class RunnerClass {
-// for git hub create a new repository to push the code
+    // This is the runner class
     // it should combine the features and step definitions
     // it should run the tests
-
 }
