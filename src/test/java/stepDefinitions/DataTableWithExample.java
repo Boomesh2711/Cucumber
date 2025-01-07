@@ -8,9 +8,10 @@ import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
 import java.util.List;
 import java.util.Map;
+
+
 public class DataTableWithExample {
 WebDriver driver;
     @Given("^Using Example to login$")
@@ -34,7 +35,4 @@ WebDriver driver;
         Pom.LoginButton(driver).click();
 
     }
-
-
-
 }

@@ -12,7 +12,9 @@ import org.junit.runner.RunWith;
         dryRun = true,
         format = {"html:target/cucumber-reports", "json:target/cucumber.json"}
 )
+
 public class RunnerClass {
+
     // This is the runner class
     // it should combine the features and step definitions
     // it should run the tests

@@ -28,5 +28,4 @@ public class Pom {
         element = driver.findElement(By.xpath("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module' and text()='Dashboard']"));
         return element;
     }
-
 }
