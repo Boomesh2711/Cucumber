@@ -1,0 +1,4 @@
+This is the content to write into file using BufferedWriter
+Winter is coming
+im a king
+naan tha da leo
