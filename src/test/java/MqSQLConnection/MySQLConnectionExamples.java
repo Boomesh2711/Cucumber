@@ -8,6 +8,7 @@ public class MySQLConnectionExamples {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         // Mention the database type and the driver
         Class.forName("com.mysql.cj.jdbc.Driver");
+        //hello buddy
         // Create a connection and define the database URL
         Connection connection= DriverManager.getConnection("jdbc:mysql://root@localhost/super_heros"); // jdbc:mysql://root@localhost/selenium_users
        // Create a statement object
