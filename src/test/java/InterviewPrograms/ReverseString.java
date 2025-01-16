@@ -42,9 +42,25 @@ String given="boomi";
 		Iterator iterator=list.listIterator();
 		
 		while (iterator.hasNext()) {
-			System.out.print(iterator.next());
+			System.out.println(iterator.next());
 			
 		}	
+	}
+	
+	public void ReverseNumber() {
+		
+		int given=123;
+		int reverse=0;
+		
+		while(given!=0) {
+			reverse=reverse*10;
+			reverse=reverse+given%10;
+			given=given/10;
+			
+		}
+		System.out.println(" Reverse a number "+reverse);
+		
+		
 	}
 	
 	public static void main(String[] args) {
@@ -60,12 +76,13 @@ String given="boomi";
 			reversed= reversed+reverse[i];
 			
 		}
-		System.out.print(reversed);
+		System.out.println("Using logic "+reversed);
 		
 		ReverseString astring=new ReverseString();
 		astring.buffer();
 		astring.usinglogic();
 		astring.collections();
+		astring.ReverseNumber();
 		
 	}
 
