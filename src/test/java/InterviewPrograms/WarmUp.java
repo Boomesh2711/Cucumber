@@ -77,11 +77,6 @@ monkeyTrouble(true, false) → false
 	
 	
 	
-	
-	
-	
-	
-	
 	/* 5. We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. 
 	      We are in trouble if the parrot is talking and the hour is before 7 or after 20. 
 	      Return true if we are in trouble.
@@ -137,6 +132,166 @@ parrotTrouble(false, 6) → false
 		}
 	 
 
+	 /* 8. Given 2 int values, return true if one is negative and one is positive. 
+	  * Except if the parameter "negative" is true, then return true only if both are negative.
+
+			posNeg(1, -1, false) → true
+			posNeg(-1, 1, false) → true
+			posNeg(-4, -5, true) → true
+	  */
+	 
+	 public boolean posNeg(int a, int b, boolean negative) {
+		  if(negative==true){
+			  System.out.println((a < 0 && b < 0));
+		  return (a < 0 && b < 0);
+		  
+		}
+		  System.out.println(((a < 0 && b > 0) || (a > 0 && b < 0)));
+		  return((a < 0 && b > 0) || (a > 0 && b < 0));
+		}
+	 
+	 /* 9. Given a string, return a new string where "not " has been added to the front. However, if the string already begins with "not", return the string unchanged. Note: use .equals() to compare 2 strings.
+
+			notString("candy") → "not candy"
+			notString("x") → "not x"
+			notString("not bad") → "not bad"
+	  */
+	 
+	 public String notString(String str) {
+		  if(str.length()>=3 && str.substring(0,3).equals("not")){
+			  System.out.println(str);
+		    return str;
+		  }
+		  System.out.println("not "+str);
+		  return "not " +str;
+		   
+		}
+	 
+	 
+	 /* 10. Given a non-empty string and an int n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..str.length()-1 inclusive).
+
+			missingChar("kitten", 1) → "ktten"
+			missingChar("kitten", 0) → "itten"
+			missingChar("kitten", 4) → "kittn"
+	  
+	  */
+
+	 public String missingChar(String str, int n) {
+		  String front=str.substring(0,n);
+		  String back=str.substring(n+1,str.length());
+		  System.out.println(front+back);
+		  
+		  return front+back;
+		  
+		}
+/* 11. Given a string, return a new string where the first and last chars have been exchanged.
+
+
+			frontBack("code") → "eodc"
+			frontBack("a") → "a"
+			frontBack("ab") → "ba"
+ */
+	 
+	 public String frontBack(String str) {
+		  
+		  if(str.length()>=2){
+		  
+		  String middle=str.substring(1,str.length()-1);
+		  String back=String.valueOf(str.charAt(0)).toLowerCase();
+		  String front=String.valueOf(str.charAt(str.length()-1));
+		  System.out.println(front+middle+back);
+		
+		  return front+middle+back;
+		  
+		}  System.out.println(str);
+		  return str;
+		}
+
+	 /* 12. Given a string, we'll say that the front is the first 3 chars of the string. If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+
+			front3("Java") → "JavJavJav"
+			front3("Chocolate") → "ChoChoCho"
+			front3("abc") → "abcabcabc"
+	  */
+	 public String front3(String str) {
+		  if(str.length()>=3){
+		    String triple=str.substring(0,3);
+		    System.out.println(triple+triple+triple);
+		    return triple+triple+triple;
+		  }
+		  System.out.println(str+str+str);
+		  return str+str+str;
+		  
+		}
+/* 13. Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
+
+			backAround("cat") → "tcatt"
+			backAround("Hello") → "oHelloo"
+			backAround("a") → "aaa"
+ */
+	 
+	 public String backAround(String str) {
+		  if(str.length()>=1){
+		    String last=String.valueOf(str.charAt(str.length()-1));
+		    System.out.println(last+str+last);
+		    return last+str+last;
+		    
+		  }
+		  System.out.println(str);
+		  return str;
+		  
+		}
+
+	 /* 14. Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the % "mod" operator -- see Introduction to Mod
+
+				or35(3) → true
+				or35(10) → true
+				or35(8) → false
+	  */
+	 
+	 public boolean or35(int n) {
+		  if(n%3==0||n%5==0){
+			  System.out.println(true);
+		    return true;
+		  }
+		  System.out.println(false);
+		return false;  
+		}
+
+	 /* 15. Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back, so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
+
+		front22("kitten") → "kikittenki"
+		front22("Ha") → "HaHaHa"
+		front22("abc") → "ababcab"
+	  */ 
+	 
+	 public String front22(String str) {
+		  if(str.length()>=2){
+		    String front=str.substring(0,2);
+		    System.out.println(front+str+front);
+		    return front+str+front;
+		  }System.out.println(str+str+str);
+		  return str+str+str;	  
+		}
+/* 16. Given a string, return true if the string starts with "hi" and false otherwise.
+
+	startHi("hi there") → true
+	startHi("hi") → true
+	startHi("hello hi") → false
+ */
+	 
+	 public boolean startHi(String str) {
+		  if(str.length()>=2){
+		    if(str.substring(0,2).equals("hi")){
+		    	System.out.println(true);
+		      return true;
+		    }
+		  }
+		  System.out.println(false);
+		  return false;
+		  
+		}
+	 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -148,8 +303,16 @@ parrotTrouble(false, 6) → false
 		obj.parrotTrouble(false, 4);
 		obj.makes10(12, 12);
 		obj.nearHundred(90);
-		
-		
+		obj.posNeg(1, -4, false);
+		obj.notString("not a ");
+		obj.missingChar("nashrin",3 );
+		obj.frontBack("Mohemadnashrin");
+		obj.front3("boomi");
+		obj.backAround("abcdef");
+		obj.or35(15);
+		obj.front22("nashrin");
+		obj.startHi("hi boomi");
+					
 
 	}
 
