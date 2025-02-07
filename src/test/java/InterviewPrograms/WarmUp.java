@@ -492,8 +492,78 @@ System.out.println("");
 		  return 0;
 		}
 
+	 /* 26. Return true if the given string contains between 1 and 3 'e' chars.
+
+			stringE("Hello") → true
+			stringE("Heelle") → true
+			stringE("Heelele") → false
+	  */
+	 public boolean stringE(String str) {
+		  if(str.length()>4)
+		  if(str.substring(1,4).contains("e")){
+				System.out.println(true);
+		  return true;
+		  
+		}	System.out.println(false);
+		return false;
+		}
+
 	 
 	 
+	 /* 27. Given two non-negative int values, return true if they have the same last digit, 
+	  * such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+
+			lastDigit(7, 17) → true
+			lastDigit(6, 17) → false
+			lastDigit(3, 113) → true
+	  */
+	 public boolean lastDigit(int a, int b) {
+		  int c=a%10;
+		  int d=b%10;
+			System.out.println(c==d);
+		  return (c==d);
+		  
+		}
+
+	 /* 28.  Given a string, return a new string where the last 3 chars are now in upper case. 
+	  * If the string has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() 
+	  * returns the uppercase version of a string.
+
+			endUp("Hello") → "HeLLO"
+			endUp("hi there") → "hi thERE"
+			endUp("hi") → "HI"
+	  */
+	 
+	 public String endUp(String str) {
+		  if(str.length()>2){
+		String upper=  str.substring(str.length()-3,str.length()).toUpperCase();
+		String front=str.substring(0,str.length()-3);
+		System.out.println(front+upper);
+		  return front+upper;
+		}
+		  System.out.println(str.toUpperCase());
+		return str.toUpperCase();
+		}
+
+	 
+	 /* 29. Given a non-empty string and an int N, return the string made starting with char 0, and 
+	  * then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+
+			everyNth("Miracle", 2) → "Mrce"
+			everyNth("abcdefg", 2) → "aceg"
+			everyNth("abcdefg", 3) → "adg"
+	  */
+	 
+	 
+	 public String everyNth(String str, int n) {
+		  String result="";
+		  for(int i=0;i<str.length();i=i+n){
+		    result=result+str.charAt(i);
+		  }
+		  System.out.println(result);
+		  return result;
+		  
+		}
 	 
 	public static void main(String[] args) {
 		
@@ -522,7 +592,34 @@ System.out.println("");
 		obj.startOz("ozuncle");
 		obj.intMax(2, 3, 8);
 		obj.max1020(19, 45);
+		obj.stringE("Hello");
+		obj.lastDigit(27, 77);
+		obj.endUp("boomijk");
+		obj.everyNth("Boom", 2);
 					
 	}
 
 }
+
+
+
+
+/*warmpup1 =30
+ * warmup2 =17
+ * String1 =33
+ * Array1 =27
+ * Logic1 =30
+ * Logic2 =9
+ * String2 =21
+ * String3 =11
+ * Array2 =34
+ * Array3 =9
+ * AP1 =21
+ * Recursion1 =30
+ * Recursion2 =8
+ * Map1 =9
+ * Map2 =9
+ * Functional1 =9
+ * Functional2 =9 
+ */
+  
