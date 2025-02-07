@@ -31,10 +31,23 @@ public class Xpath {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		WebDriverManager.edgedriver().setup();
-		 driver = new EdgeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.amazon.in");
+//		WebDriverManager.edgedriver().setup();
+//		 driver = new EdgeDriver();
+//		driver.manage().window().maximize();
+//		driver.get("https://www.amazon.in");
+		
+		
+		String s="*";
+		
+		for(int i=1;i<=5;i++) {
+			for(int j=1;j<=i;j++) {
+				System.out.print(s);
+				
+				
+			}
+			System.out.println("");
+			//break;
+		}
 		
 
 	}

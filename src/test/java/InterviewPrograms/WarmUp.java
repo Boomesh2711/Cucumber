@@ -223,12 +223,13 @@ parrotTrouble(false, 6) → false
 		  return str+str+str;
 		  
 		}
-/* 13. Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
-
-			backAround("cat") → "tcatt"
-			backAround("Hello") → "oHelloo"
-			backAround("a") → "aaa"
- */
+	/* 13. Given a string, take the last char and return a new string with the last char added at the front and back, 
+	 * so "cat" yields "tcatt". The original string will be length 1 or more.
+	
+				backAround("cat") → "tcatt"
+				backAround("Hello") → "oHelloo"
+				backAround("a") → "aaa"
+	 */
 	 
 	 public String backAround(String str) {
 		  if(str.length()>=1){
@@ -242,7 +243,8 @@ parrotTrouble(false, 6) → false
 		  
 		}
 
-	 /* 14. Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the % "mod" operator -- see Introduction to Mod
+	 /* 14. Return true if the given non-negative number is a multiple of 3 or a multiple of 5. 
+	  * Use the % "mod" operator -- see Introduction to Mod
 
 				or35(3) → true
 				or35(10) → true
@@ -258,7 +260,8 @@ parrotTrouble(false, 6) → false
 		return false;  
 		}
 
-	 /* 15. Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back, so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
+	 /* 15. Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back, 
+	  * so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
 
 		front22("kitten") → "kikittenki"
 		front22("Ha") → "HaHaHa"
@@ -273,12 +276,12 @@ parrotTrouble(false, 6) → false
 		  }System.out.println(str+str+str);
 		  return str+str+str;	  
 		}
-/* 16. Given a string, return true if the string starts with "hi" and false otherwise.
-
-	startHi("hi there") → true
-	startHi("hi") → true
-	startHi("hello hi") → false
- */
+	/* 16. Given a string, return true if the string starts with "hi" and false otherwise.
+	
+		startHi("hi there") → true
+		startHi("hi") → true
+		startHi("hello hi") → false
+	 */
 	 
 	 public boolean startHi(String str) {
 		  if(str.length()>=2){
@@ -292,8 +295,207 @@ parrotTrouble(false, 6) → false
 		  
 		}
 	 
+	 /* 17. Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+
+			icyHot(120, -1) → true
+			icyHot(-1, 120) → true
+			icyHot(2, 120) → false
+	  */
+	 
+	 public boolean icyHot(int temp1, int temp2) {
+		  if((temp1<0&&temp2<0)||(temp1>0&&temp2>0)){
+			  System.out.println(false);
+		  return false;
+		  }
+		  else if((temp1<0||temp1>100)&&(temp2<0||temp2>100)){
+			  System.out.println(true);
+		  return true;
+		}
+		  System.out.println(false);
+		return false;
+		}
+
+	 /* 18. Given 2 int values, return true if either of them is in the range 10..20 inclusive.
+
+			in1020(12, 99) → true
+			in1020(21, 12) → true
+			in1020(8, 99) → false
+	  */
+	 
+	 public boolean in1020(int a, int b) {
+		  if((a>=10&&a<=20)||(b>=10&&b<=20)){
+			  System.out.println(true);
+		    return true;
+		  }
+		  System.out.println(false);
+		  return false;
+		  
+		}
+	 
+	 /* 19. We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
+	  * Given 3 int values, return true if 1 or more of them are teen.
+
+		hasTeen(13, 20, 10) → true
+		hasTeen(20, 19, 10) → true
+		hasTeen(20, 10, 13) → true
+	  */
+	 
+	 public boolean hasTeen(int a, int b, int c) {
+		  if((a>=13&&a<=19)||(b>=13&&b<=19)||(c>=13&&c<=19)){
+			  System.out.println(true);
+			    return true;
+			  }
+			  System.out.println(false);
+			  return false;
+			  
+			}
+	 
+	 /* 20. We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
+	  * Given 2 int values, return true if one or the other is teen, but not both.
+
+			loneTeen(13, 99) → true
+			loneTeen(21, 19) → true
+			loneTeen(13, 13) → false
+				  */
+	 public boolean loneTeen(int a, int b) {
+		  if((a<=19&&a>=13)&&(b<=19&&b>=13)){
+			  System.out.println(false);
+		    return false;
+		  }else if((a<=19&&a>=13)||(b<=19&&b>=13)){
+			  System.out.println(true);
+		    return true;
+		  }
+		  System.out.print(false);
+		  return false;
+		}
+
+	 /* 21. Given a string, if the string "del" appears starting at index 1, return a string where that "del" has been deleted. Otherwise, return the string unchanged.
+
+			delDel("adelbc") → "abc"
+			delDel("adelHello") → "aHello"
+			delDel("adedbc") → "adedbc"
+				  */
+
+	 public String delDel(String str) {
+		  if(str.length()>=4){
+		  if((str.substring(1,4).equals("del"))){
+		    String front=String.valueOf(str.charAt(0));
+		    String back=str.substring(4,str.length());
+		    System.out.println(front+back);
+		    return front+back;
+		  }
+		  System.out.println(str);
+		  return str;
+		  }
+		  System.out.println(str);
+		  return str;
+		}
+/* 22. Return true if the given string begins with "mix", except the 'm' can be anything, 
+      so "pix", "9ix" .. all count.
+
+		mixStart("mix snacks") → true
+		mixStart("pix snacks") → true
+		mixStart("piz snacks") → false
+ */
+	 
+	 public boolean mixStart(String str) {
+		  if(str.length()>=3)
+		  if(str.substring(1,3).equals("ix")){
+			  System.out.println(true);
+		    return true;
+		  }  System.out.println(false);
+		  return false;
+		}
+
+	 
+	 
+	 /* 23.  Given a string, return a string made of the first 2 chars (if present),
+	   however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
+
+		startOz("ozymandias") → "oz"
+		startOz("bzoo") → "z"
+		startOz("oxx") → "o" 
+	  */
+	 
+	 public String startOz(String str) {
+		  if(str.length()==0){
+System.out.println("");
+		    return "";
+		  }
+		  else if((str.length()>=2)&&(str.substring(0,2).equals("oz"))){
+		    System.out.println("oz");
+			  return "oz";
+		  }else if(String.valueOf(str.charAt(0)).equals("o")){
+		    System.out.println("o");
+			  return "o";
+		  }
+		    else if(String.valueOf(str.charAt(1)).equals("z")){
+		      System.out.println("z");
+		    	return "z";
+		   }
+		  System.out.println("");
+		  return "";
+		}
+		  
+
+/* 24. Given three int values, a b c, return the largest.
+
+		intMax(1, 2, 3) → 3
+		intMax(1, 3, 2) → 3
+		intMax(3, 2, 1) → 3
+
+ */
+		  		 
+	 public int intMax(int a, int b, int c) {
+		  if((a>b)&&(a>c)){
+			  System.out.println(a);
+		    return a;
+		  }else if ((b>a)&&(b>c)){
+			  System.out.println(b);
+		    return b;
+		  }
+		  System.out.println(c);
+		  return c;
+		  
+		}
+	 
+		
+		 
+	/* 25. Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+
+			max1020(11, 19) → 19
+			max1020(19, 11) → 19
+			max1020(11, 9) → 11	 
+	 */
+		 
+	 
+	 
+	 public int max1020(int a, int b) {
+		  if((a>=10&&a<=20)&&(b>=10&&b<=20)) {
+		    if(a<b){
+		    	System.out.println(b);
+		      return b;
+		      }else if(a>b){
+		    		System.out.println(a);
+		      return a;
+		      }
+		  }
+		   if (a >= 10 && a <= 20) {
+				System.out.println(a);
+		 return a;
+		   }
+		 else if (b >= 10 && b <= 20) {
+				System.out.println(b);
+		  return b;
+		}
+			System.out.println(0);
+		  return 0;
+		}
+
+	 
+	 
+	 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		WarmUp obj=new WarmUp();
 		obj.sleepIn(false, false);
@@ -312,8 +514,15 @@ parrotTrouble(false, 6) → false
 		obj.or35(15);
 		obj.front22("nashrin");
 		obj.startHi("hi boomi");
+		obj.icyHot(106, -10);
+		obj.in1020(11, 290);
+		obj.hasTeen(12, 20, 16);
+		obj.loneTeen(13, 40);
+		obj.mixStart("vix there");
+		obj.startOz("ozuncle");
+		obj.intMax(2, 3, 8);
+		obj.max1020(19, 45);
 					
-
 	}
 
 }
