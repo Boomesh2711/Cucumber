@@ -206,6 +206,93 @@ public class WarmUpAdvaced {
         return false;
     }
 
+    /* 11. Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. 
+           So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+		
+		stringMatch("xxcaazz", "xxbaaz") → 3
+		stringMatch("abc", "abc") → 2
+		stringMatch("abc", "axc") → 0
+     */
+    
+    public int stringMatch(String a, String b) {
+    	  int count=0;
+    	 int length=Math.min(a.length(),b.length());
+    	  for(int i=0;i<length-1;i++){
+    	   String one=a.substring(i,i+2);
+    	   String two=b.substring(i,i+2);
+    	   if(one.equals(two)){
+    	     count++;
+    	   }
+    	 }
+    	  System.out.println(count);
+    	 return count;
+    	 
+    	 }
+
+/* 12. Given a string, return a version where all the "x" have been removed. 
+    Except an "x" at the very start or end should not be removed.
+
+		stringX("xxHxix") → "xHix"
+		stringX("abxxxcd") → "abcd"
+		stringX("xabxxxcdx") → "xabcdx"
+		
+		Reference: 
+		
+    Iteration 2 (i = 1):
+    	Character: 'a'
+    	Condition: !(1 > 0 && 1 < 6 && "a".equals("x")) → !(true && true && false) → true
+    	Action: Add 'a' to result → result = "xa"
+    	Iteration 3 (i = 2):
+    	Character: 'x'
+    	Condition: !(2 > 0 && 2 < 6 && "x".equals("x")) → !(true && true && true) → false
+    	Action: Skip 'x'
+    
+  */
+    
+    
+    public String stringX(String str) {
+    	  String result="";
+    	for(int i=0;i<str.length();i++){
+    	  if(!(i>0 && i<(str.length()-1) && str.substring(i,i+1).equals("x"))){
+    	    result =result+str.substring(i,i+1);
+    	  }
+    	}
+    	System.out.println(result);
+    	return result;
+    	  
+    	}
+      
+ /*13. Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
+		
+		altPairs("kitten") → "kien"
+		altPairs("Chocolate") → "Chole"
+		altPairs("CodingHorror") → "Congrr"
+		
+			Iteration 1 (i = 0):
+				end = 0 + 2 = 2
+				Substring: str.substring(0, 2) → "ki"
+				result = "ki"
+			Iteration 2 (i = 4):
+				end = 4 + 2 = 6
+				Substring: str.substring(4, 6) → "en"
+				result = "kien"
+  * 
+  */
+    public String altPairs(String str) {
+    	  String result="";
+    	  for(int i=0;i<str.length();i+=4){
+    	  int end=i+2;
+    	  if(end>str.length()){
+    	    end=str.length();
+    	  }
+    	   result=result+str.substring(i,end);
+    	  }
+    	  System.out.println(result);
+    	  return result;
+    	}
+
+    
+    
     public static void main(String[] args) {
         WarmUpAdvaced warmUpAdvaced=new WarmUpAdvaced();
         warmUpAdvaced.stringTimes("Boom ", 2);
@@ -218,6 +305,8 @@ public class WarmUpAdvaced {
         warmUpAdvaced.arrayCount9(new int[]{1, 9,9,7,9,8,99,6,6, 9});
         warmUpAdvaced.arrayFront9(new int[]{1, 2, 9, 3, 4});
         warmUpAdvaced.array123(new int[]{1, 1, 2, 3, 1});
+        warmUpAdvaced.stringMatch("xxxcxc", "xcvxcv");
+        warmUpAdvaced.stringX("xboomxxeshx");
 
     }
 
