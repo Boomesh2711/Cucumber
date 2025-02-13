@@ -302,10 +302,11 @@ public class WarmUpAdvaced {
     
     public String stringYak(String str) {
     	  String result="";
-    	  
+    	  String b="yaknashyak";
     	  for(int i=0;i<str.length();i++){
     	   if((i<=(str.length()-3) && str.substring(i,i+3).equals("yak"))){
-    	      i+=2;
+    	     i+=2;
+    	      
     	   }else{
     	    	    result =result+str.substring(i,i+1);
     	   }
@@ -374,6 +375,10 @@ public class WarmUpAdvaced {
     	}
 
    
+    
+    
+
+
     public static void main(String[] args) {
         WarmUpAdvaced warmUpAdvaced=new WarmUpAdvaced();
         warmUpAdvaced.stringTimes("Boom ", 2);
@@ -389,10 +394,13 @@ public class WarmUpAdvaced {
         warmUpAdvaced.stringMatch("xxxcxc", "xcvxcv");
         warmUpAdvaced.stringX("xboomxxeshx");
         warmUpAdvaced.altPairs("abcdefghijkl");
-        warmUpAdvaced.stringYak("boomyakesh");
+        warmUpAdvaced.stringYak("booyakmensghgfhgsdc");
         warmUpAdvaced.array667(new int[] {6,6,7,1});
         warmUpAdvaced.noTriples(new int[] {1,1,1,2,3,2});
-        warmUpAdvaced.has271(new int[] {2,7,0,3,8,2});
+        warmUpAdvaced.has271(new int[] {2,7,0 ,3,8,2});
+        
+        
+        
     }
 
 }
