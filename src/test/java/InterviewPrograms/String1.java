@@ -75,12 +75,12 @@ public class String1 {
 
     /* 5. Given a string and an int n, return a string made of the first and last n chars from the string. The string length will be at least n.
 
-
-nTwice("Hello", 2) → "Helo"
-nTwice("Chocolate", 3) → "Choate"
-nTwice("Chocolate", 1) → "Ce"
+		nTwice("Hello", 2) → "Helo"
+		nTwice("Chocolate", 3) → "Choate"
+		nTwice("Chocolate", 1) → "Ce"
      * 
-     * The function nTwice takes a string and an integer n, and returns a new string made up of the first n characters and the last n characters of the original string. Here’s a step-by-step explanation:
+     * The function nTwice takes a string and an integer n, and returns a new string made up of the first n characters and
+     the last n characters of the original string. Here’s a step-by-step explanation:
 
 		Input: A string and an integer n.
 		Output: A new string consisting of the first n characters and the last n characters of the input string.
@@ -98,13 +98,89 @@ nTwice("Chocolate", 1) → "Ce"
 
     	  return str;  
     	}
+/* 6. Given a string and an index, return a string length 2 starting at the given index.
+If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.
 
-    
+		twoChar("java", 0) → "ja"
+		twoChar("java", 2) → "va"
+		twoChar("java", 3) → "ja
+ */
+
+
+	public String twoChar(String str, int index) {
+		  if(index+2<=str.length() && index>=0){
+			  System.out.println(str.substring(index,index+2));
+		      return str.substring(index,index+2);
+		  }
+		  System.out.println(str.substring(0,2));
+		  return str.substring(0,2);
+		}
+/* 7.	Given a string, return true if "bad" appears starting at index 0 or 1 in the string,
+such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. Note: use .equals() to compare 2 strings.
+
+hasBad("badxx") → true
+hasBad("xbadxx") → true
+hasBad("xxbadxx") → false
+		 */
+
+	public boolean hasBad(String str) {
+		if((str.length()==3) && str.equals("bad"))
+		{
+			System.out.println("true");
+			return true;
+		}
+		if(str.length()>3)
+			if((str.substring(0,3).equals("bad"))|| ((str.substring(1,4).equals("bad"))))
+			{
+				System.out.println("true");
+				return true;
+			}
+		System.out.println("false");
+		return false;
+	}
+
+	/*  8. Given a string, return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.
+		atFirst("hello") → "he"
+		atFirst("hi") → "hi"
+		atFirst("h") → "h@"
+	 */
+
+
+	public String atFirst(String str) {
+		if(str.length()>=2){
+			return str.substring(0,2);
+		}else if(str.length()>=1){
+			return str+"@";
+		}return"@@";
+
+	}
+
+	public boolean arrayjk(int[] nums) {
+
+		if(nums.length>2){
+			for(int i=0;i<nums.length-1;i++)
+				if(nums[i]==1&&nums[i+1]==2&&nums[i+2]==3){
+					System.out.println(true);
+					return true;
+				}
+		}
+		System.out.println(false);
+		return false;
+	}
+
+
 	public static void main(String[] args) {
 		String1 obj=new String1();
 		obj.right2("Hello boomi");
 		obj.theEnd("Boom", false);
-		// TODO Auto-generated method stub
+		obj.middleTwo("boomi");
+		obj.endsLy("oddly");
+		obj.nTwice("Hello", 2);
+		obj.twoChar("java", 3);
+		obj.hasBad("badxx");
+		obj.atFirst("h");
+
+
 
 	}
 
