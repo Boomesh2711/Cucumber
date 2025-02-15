@@ -156,7 +156,19 @@ hasBad("xxbadxx") → false
 	}
 
 	public boolean arrayjk(int[] nums) {
+int[] array= {1,2,3,4,5,6,7,8,9,3,3,3,4,4,4,5,5,5,5,5,5,5};
+		int[] result=new int[array.length];
+for (int i=0;i<array.length;i++){{
+	if(array[i]==array[i+1]){
+		result[i]=array[i];
 
+	}
+	for (int j=0;j<result.length;j++){
+
+	}
+
+
+}}
 		if(nums.length>2){
 			for(int i=0;i<nums.length-1;i++)
 				if(nums[i]==1&&nums[i+1]==2&&nums[i+2]==3){
@@ -167,7 +179,36 @@ hasBad("xxbadxx") → false
 		System.out.println(false);
 		return false;
 	}
+/*
 
+Given a string, return a version without the first 2 chars. Except keep the first char if it is 'a' and keep the second char if it is 'b'. The string may be any length. Harder than it looks.
+
+
+deFront("Hello") → "llo"
+deFront("java") → "va"
+deFront("away") → "aay"
+ */
+public String deFront(String str) {
+	if((str.length()>=3)&&(str.substring(0,2)).equals("ab")){
+		System.out.println(str);
+		return str;
+	} else if((str.length()>=3)&&(str.charAt(0)==('a')&&(!(str.charAt(1)==('b'))))){
+		System.out.println("a"+str.substring(2,str.length()));
+		return "a"+str.substring(2,str.length());
+	}else if((str.length()>=3)&&(str.charAt(1)==('b')&&(!(str.charAt(0)==('a'))))){
+		System.out.println("b"+str.substring(2,str.length()));
+		return str.substring(1);
+	}else if((str.length()==2)&&(str.equals("ab"))){
+		System.out.println(str);
+		return str;
+	}else if((str.length()==2)&&(str.charAt(0)==('a')))
+	{
+		System.out.println("a");
+		return "a";
+	}
+	System.out.println(str.substring(1));
+	return str.substring(2);
+}
 
 	public static void main(String[] args) {
 		String1 obj=new String1();
@@ -179,6 +220,7 @@ hasBad("xxbadxx") → false
 		obj.twoChar("java", 3);
 		obj.hasBad("badxx");
 		obj.atFirst("h");
+		obj.deFront("away");
 
 
 
